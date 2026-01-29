@@ -20,8 +20,8 @@ jobs:
         node-version: 25
         registry-url: https://npm.pkg.github.com/
     - run: |
-        echo "//npm.pkg.github.com/:_authToken=\"$TOKEN\"" >> .npmrc
-        echo "//npm.pkg.github.com/:always-auth=true" >> .npmrc
+        printf "\n//npm.pkg.github.com/:_authToken=\"$TOKEN\"" >> .npmrc
+        printf "\n//npm.pkg.github.com/:always-auth=true" >> .npmrc
         npm i
         tsc
     - name: Docker login
