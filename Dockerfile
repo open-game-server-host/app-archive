@@ -6,8 +6,7 @@ ARG UID=1337
 ARG USERNAME=ogsh
 
 WORKDIR $WORK_DIR
-ADD build build
-ADD node_modules node_modules
+ADD . .
 RUN adduser --uid $UID --disabled-password --gecos "" $USERNAME && chown -R $UID $WORK_DIR
 USER $USERNAME
 
